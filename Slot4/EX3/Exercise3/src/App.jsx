@@ -13,15 +13,19 @@ function App() {
   return (
     <div className="App">
       {/* 1. Navbar */}
-      <Navbar expand="lg" className="bg-dark navbar-dark">
-        <Container>
-          <Navbar.Brand href="#">Single Page Application</Navbar.Brand>
+      <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="#home">Single Page Application</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#orchids">Link</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
           </Nav>
-        </Container>
-      </Navbar>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
 
       {/* 2. Banner tự động chạy */}
       <TopCarousel banners={listBanner} />
