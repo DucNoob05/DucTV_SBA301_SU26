@@ -3,18 +3,17 @@ import { Carousel } from 'react-bootstrap';
 
 function TopCarousel({ banners }) {
   return (
-    <Carousel fade interval={3000}> 
-      {banners.map((banner) => (
-        <Carousel.Item key={banner.id}>
+    <Carousel fade interval={2500} className="banner-carousel">
+      {banners.map((item) => (
+        <Carousel.Item key={item.id}>
           <img
-            className="d-block w-100"
-            src={banner.image}
-            alt={banner.title}
-            style={{ height: '450px', objectFit: 'cover' }}
+            className="d-block w-100 banner-image"
+            src={item.image}
+            alt={item.title}
           />
-          <Carousel.Caption style={{ backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: '10px' }}>
-            <h3>{banner.title}</h3>
-            <p>{banner.description}</p>
+          <Carousel.Caption className="banner-caption">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
           </Carousel.Caption>
         </Carousel.Item>
       ))}

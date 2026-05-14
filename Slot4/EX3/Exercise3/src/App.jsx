@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import { Navbar, Container, Nav, Row, Col, Card, Button } from 'react-bootstrap';
 
 // Import dữ liệu
@@ -28,7 +29,9 @@ function App() {
 
 
       {/* 2. Banner tự động chạy */}
-      <TopCarousel banners={listBanner} />
+      <Container className="banner-container">
+        <TopCarousel banners={listBanner} />
+      </Container>
 
       {/* 3. Danh sách hoa lan */}
       <Container className="my-5">
