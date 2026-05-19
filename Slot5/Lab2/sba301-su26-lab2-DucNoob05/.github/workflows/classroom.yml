@@ -1,0 +1,101 @@
+name: GitHub Classroom Autograding
+
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+  repository_dispatch:
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: NavBar component (1.0)
+        id: navbar
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: NavBar component
+          setup-command: ''
+          command: npx vitest run src/tests/NavBar.test.jsx
+          timeout: 5
+          max-score: 1
+
+      - name: BannerCarousel component (2.0)
+        id: carousel
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: BannerCarousel component
+          setup-command: ''
+          command: npx vitest run src/tests/BannerCarousel.test.jsx
+          timeout: 5
+          max-score: 2
+
+      - name: OrchidCard component (2.0)
+        id: card
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: OrchidCard component
+          setup-command: ''
+          command: npx vitest run src/tests/OrchidCard.test.jsx
+          timeout: 5
+          max-score: 2
+
+      - name: OrchidDetailModal component (2.0)
+        id: modal
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: OrchidDetailModal component
+          setup-command: ''
+          command: npx vitest run src/tests/OrchidDetailModal.test.jsx
+          timeout: 5
+          max-score: 2
+
+      - name: Orchids component (2.0)
+        id: orchids
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Orchids component
+          setup-command: ''
+          command: npx vitest run src/tests/Orchids.test.jsx
+          timeout: 5
+          max-score: 2
+
+      - name: App integration (1.0)
+        id: app
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: App integration
+          setup-command: ''
+          command: npx vitest run src/tests/App.test.jsx
+          timeout: 5
+          max-score: 1
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          NAVBAR_RESULTS: "${{steps.navbar.outputs.result}}"
+          CAROUSEL_RESULTS: "${{steps.carousel.outputs.result}}"
+          CARD_RESULTS: "${{steps.card.outputs.result}}"
+          MODAL_RESULTS: "${{steps.modal.outputs.result}}"
+          ORCHIDS_RESULTS: "${{steps.orchids.outputs.result}}"
+          APP_RESULTS: "${{steps.app.outputs.result}}"
+        with:
+          runners: navbar,carousel,card,modal,orchids,app

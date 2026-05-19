@@ -1,0 +1,64 @@
+{
+  "tests": [
+    {
+      "name": "NavBar component",
+      "setup": "npm ci",
+      "run": "npx vitest run src/tests/NavBar.test.jsx",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "BannerCarousel component",
+      "setup": "",
+      "run": "npx vitest run src/tests/BannerCarousel.test.jsx",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 2
+    },
+    {
+      "name": "OrchidCard component",
+      "setup": "",
+      "run": "npx vitest run src/tests/OrchidCard.test.jsx",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 2
+    },
+    {
+      "name": "OrchidDetailModal component",
+      "setup": "",
+      "run": "npx vitest run src/tests/OrchidDetailModal.test.jsx",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 2
+    },
+    {
+      "name": "Orchids component",
+      "setup": "",
+      "run": "npx vitest run src/tests/Orchids.test.jsx",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 2
+    },
+    {
+      "name": "App integration",
+      "setup": "",
+      "run": "npx vitest run src/tests/App.test.jsx",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    }
+  ]
+}
