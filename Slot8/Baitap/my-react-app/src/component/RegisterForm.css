@@ -1,0 +1,27 @@
+.register-form .form-label {
+  font-weight: 600;
+  color: #1f2a26;
+}
+
+.register-form .form-control {
+  border-radius: 0.8rem;
+  padding: 0.65rem 0.85rem;
+  border-color: #cedfd5;
+}
+
+.register-form .form-control:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+}
+
+.register-form .submit-btn {
+  border-radius: 0.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #198754, #157347);
+  border: none;
+}
+
+.register-form .submit-btn:hover,
+.register-form .submit-btn:focus {
+  background: linear-gradient(135deg, #157347, #14633d);
+}
